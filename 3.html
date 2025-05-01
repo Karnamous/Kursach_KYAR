@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Оплата</title>
+  <link rel="stylesheet" href="style/style.css">
+  <link rel="stylesheet" href="style/Panel.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header__inner">
+      <a class="logo">
+        <img src="image/Logo.png" alt="Логотип">
+      </a>
+
+      <!-- Десктоп‑навигация -->
+      <nav class="nav">
+        <ul class="nav__list">
+          <li><a href="1.html">Главная</a></li>
+          <li><a href="2.html">Каталог</a></li>
+          <li><a href="5.html">Мы на карте</a></li>
+          <li><a href="4.html">О нас</a></li>
+        </ul>
+      </nav>
+
+      <!-- Кнопка‑бургер -->
+      <div class="header__controls">
+        <button class="btn-menu"
+                aria-label="Открыть меню"
+                aria-expanded="false">
+          <img src="image/menu.svg" alt="">
+        </button>
+      </div>
+    </div>
+
+    <!-- Мобильное меню -->
+    <nav class="mobile-nav">
+      <ul>
+        <li><a href="1.html">Главная</a></li>
+        <li><a href="2.html">Каталог</a></li>
+        <li><a href="5.html">Мы на карте</a></li>
+        <li><a href="4.html">О нас</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main -->
+  <main class="site-main container">
+  <h1 class="page-title">Оплата билета</h1>
+  <form class="payment-form">
+    <div class="form-group">
+      <label for="cinema">Выберите кинотеатр</label>
+      <select id="cinema" name="cinema">
+        <option>ТРЦ Dana Mall, 3 этаж, г. Минск, ул. Петра Мстиславца, 11</option>
+        <option>ТРЦ Palazzo, 3 этаж, г. Минск ул. Тимирязева, 74А</option>
+        <option>ТРЦ Arena City, 2–4 этаж, г. Минск, пр-т Победителей, 84</option>
+        <option> ТРК Triniti, 3 этаж, г. Гродно, пр-т Янки Купалы, 87</option>
+        <option>г. Гродно, пр-т Космонавтов, 41/Б</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="movie">Фильм</label>
+      <select id="movie" name="movie">
+        <option value="Микки 17">Микки 17</option>
+        <option value="Особо опасный пассажир">Особо опасный пассажир</option>
+        <option value="Последний охотник на демонов">Последний охотник на демонов</option>
+        <option value="Пророк. История Александра Пушкина">Пророк. История Александра Пушкина</option>
+        <option value="Крушение мира">Крушение мира</option>
+        <option value="Астрал. Спуск к дьяволу">Астрал. Спуск к дьяволу</option>
+        <option value="Пальма">Пальма 2</option>
+        <option value="Мелочи жизни">Мелочи жизни</option>
+        <option value="Ущелье">Ущелье</option>
+        <option value="Зверопоиск">Зверопоиск</option>
+        <option value="Ждун">Ждун</option>
+        <option value="Оставь это ветру">Оставь это ветру</option>
+        <option value="Гольдберг-вариации">Гольдберг‑вариации</option>
+        <option value="Обезьяна">Обезьяна</option>
+        <option value="Семь вуалей">Семь вуалей</option>
+        <option value="Мужчина и женщина">Мужчина и женщина</option>
+     
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="date">дата</label>
+      <select id="date" name="date"></select>
+    </div>
+    
+    <div class="form-group">
+      <label for="time">время</label>
+      <select id="time" name="time"></select>
+    </div>
+    
+    <div class="form-group">
+      <label for="seat-map">Место в зале</label>
+      <div id="seat-map" class="seat-map">
+      </div>
+      <div class="price">
+        Цена: <span>0 руб</span>
+      </div>
+    </div>
+    
+
+    <div class="form-group">
+      <label for="email">email</label>
+      <input type="email" id="email" name="email" placeholder="для отправки электронного билета">
+    </div>
+
+    <button type="submit" class="btn-pay">Оплатить</button>
+  </form>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer__inner">
+      <div class="footer__social">
+        <a href="#"><img src="image/facebook.svg" alt="Facebook"></a>
+        <a href="#"><img src="image/instagram.svg" alt="Instagram"></a>
+        <a href="#"><img src="image/twitter.svg" alt="Twitter"></a>
+        <a href="#"><img src="image/telegram.svg" alt="Telegram"></a>
+      </div>
+      <div class="footer__contacts">
+        <a href="tel:+375257853743">+375 (25) 785‑37‑43</a>
+        <a href="mailto:Vkorzan2006@gmail.com">Vkorzan2006@gmail.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Скрипт  -->
+  <script>
+    const btnMenu = document.querySelector('.btn-menu');
+    const mobileNav = document.querySelector('.mobile-nav');
+
+    btnMenu.addEventListener('click', () => {
+      const expanded = btnMenu.getAttribute('aria-expanded') === 'true';
+      btnMenu.setAttribute('aria-expanded', String(!expanded));
+      mobileNav.classList.toggle('active');
+    });
+ 
+    const TICKET_PRICE = 12;
+  const selectCinema = document.getElementById('cinema');
+  const selectMovie  = document.getElementById('movie');
+  const selectDate   = document.getElementById('date');
+  const selectTime   = document.getElementById('time');
+  const seatMap      = document.getElementById('seat-map');
+  const priceSpan    = document.querySelector('.price span');
+
+  function generateDates() {
+    selectDate.innerHTML = '';
+    const today = new Date();
+    for (let i = 0; i < 7; i++) {
+      const d = new Date(today);
+      d.setDate(today.getDate() + i);
+      const opt = document.createElement('option');
+      opt.value = d.toISOString().split('T')[0];
+      opt.textContent = d.toLocaleDateString('ru-RU', {
+        weekday: 'short', day: '2-digit', month: '2-digit'
+      });
+      selectDate.appendChild(opt);
+    }
+  }
+
+  function generateTimes() {
+    selectTime.innerHTML = '';
+    const baseTimes = ["10:00","12:30","15:00","17:30","20:00","22:30"];
+    const shuffled = [...baseTimes].sort(() => 0.5 - Math.random());
+    shuffled.slice(0,4).sort().forEach(t => {
+      const opt = document.createElement('option');
+      opt.value = t;
+      opt.textContent = t;
+      selectTime.appendChild(opt);
+    });
+  }
+
+  function generateSeats() {
+    seatMap.innerHTML = '<div class="screen">ЭКРАН</div>';
+    const rows = 8, cols = 10;
+    for (let r = 1; r <= rows; r++) {
+      const rowDiv = document.createElement('div');
+      rowDiv.className = 'seat-row';
+      const rn = document.createElement('span');
+      rn.className = 'row-number';
+      rn.textContent = r;
+      rowDiv.appendChild(rn);
+      for (let c = 1; c <= cols; c++) {
+        const seat = document.createElement('div');
+        seat.classList.add('seat');
+        if (Math.random() < 0.3) {
+          seat.classList.add('taken');
+        } else {
+          seat.classList.add('available');
+          seat.addEventListener('click', () => {
+            seat.classList.toggle('selected');
+            updatePrice();
+          });
+        }
+        rowDiv.appendChild(seat);
+      }
+      seatMap.appendChild(rowDiv);
+    }
+    updatePrice();
+  }
+  function updatePrice() {
+    const count = document.querySelectorAll('.seat.selected').length;
+    priceSpan.textContent = (count * TICKET_PRICE) + ' руб';
+  }
+  generateDates();
+  generateTimes();
+  generateSeats();
+
+  [selectCinema, selectMovie, selectDate, selectTime].forEach(el => {
+    el.addEventListener('change', () => {
+      if (el === selectDate) generateTimes();
+      generateSeats();
+    });
+  });
+    document.addEventListener("DOMContentLoaded", function() {
+      const params = new URLSearchParams(window.location.search);
+      const selectedFilm = params.get('film');
+      if (selectedFilm) {
+        const movieSelect = document.getElementById("movie");
+        movieSelect.value = selectedFilm;
+      }
+    });
+ 
+  </script>
+</body>
+</html>

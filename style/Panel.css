@@ -1,0 +1,128 @@
+@media screen {
+ 
+  .payment-form > * {
+    margin-bottom: var(--gap); 
+  }
+  .payment-form select,
+  .payment-form input[type="date"],
+  .payment-form input[type="time"],
+  .payment-form input[type="email"] {
+    height: 40px; 
+  }
+
+}
+.page-title {
+  font-size: 32px;
+  margin: var(--gap) 0;
+}
+
+.payment-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  align-items: center;
+}
+
+.payment-form .form-group {
+  width: 100%;
+  max-width: 500px;
+  text-align: left;
+}
+
+.payment-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.payment-form select,
+.payment-form input[type="date"],
+.payment-form input[type="time"],
+.payment-form input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  background: #1A1A1A;
+  border: none;
+  border-radius: 4px;
+  color: var(--text);
+}
+
+.seat-map {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 8px;
+  background: #1A1A1A;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.screen {
+  text-align: center;
+  color: var(--text-alt);
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.seat-map {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 10px 0;
+}
+
+.seat-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.row-number {
+  width: 24px;
+  text-align: center;
+  color: var(--text-alt);
+}
+
+/* Кресла */
+.seat {
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+}
+
+.seat.available {
+  background: #333;
+  cursor: pointer;
+}
+.seat.taken {
+  background: #555;
+  cursor: not-allowed;
+}
+.seat.selected {
+  background: var(--accent);
+}
+
+.price {
+  margin-top: 10px;
+  font-size: 16px;
+}
+.price span {
+  font-weight: bold;
+}
+
+
+.btn-pay {
+  padding: 12px 40px;
+  border: 2px solid var(--btn-color);
+  background: none;
+  color: var(--btn-color);
+  font-size: 18px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-pay:hover {
+  background: var(--btn-color);
+  color: var(--bg);
+}

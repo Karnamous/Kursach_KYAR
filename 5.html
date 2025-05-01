@@ -1,0 +1,108 @@
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Кинотеатр</title>
+  <link rel="stylesheet" href="style/style.css">
+  <link rel="stylesheet" href="style/locations.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header__inner">
+      <a  class="logo">
+        <img src="image/Logo.png" alt="Логотип">
+      </a>
+
+      <!-- Десктоп‑навигация -->
+      <nav class="nav">
+        <ul class="nav__list">
+          <li><a href="1.html">Главная</a></li>
+          <li><a href="2.html">Каталог</a></li>
+          <li><a href="3.html">Оплата</a></li>
+          <li><a href="4.html">О нас</a></li>
+        </ul>
+      </nav>
+
+      <!-- Кнопка‑бургер (появляется на мобилках) -->
+      <div class="header__controls">
+        <button class="btn-menu"
+                aria-label="Открыть меню"
+                aria-expanded="false">
+          <img src="image/menu.svg" alt="">
+        </button>
+      </div>
+    </div>
+
+    <!-- Мобильное меню -->
+    <nav class="mobile-nav">
+      <ul>
+        <li><a href="1.html">Главная</a></li>
+        <li><a href="2.html">Каталог</a></li>
+        <li><a href="3.html">Оплата</a></li>
+        <li><a href="4.html">О нас</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main -->
+  <main class="site-main container">
+   <section class="locations-section">
+    <h2>Мы на карте</h2>
+    
+    <div class="city-block">
+      <h3>Минск</h3>
+      <ul>
+        <li><strong>ТРЦ Dana Mall</strong>3 этаж, г. Минск, ул. Петра Мстиславца, 11</li>
+        <li><strong>ТРЦ Palazzo</strong>3 этаж, г. Минск ул. Тимирязева, 74А</li>
+        <li><strong>ТРЦ Arena City</strong>2–4 этаж, г. Минск, пр-т Победителей, 84</li>
+      </ul>
+    </div>
+
+    <div class="city-block">
+      <h3>Гродно</h3>
+      <ul>
+        <li><strong>Пр-т Космонавтов</strong>г. Гродно, пр-т Космонавтов, 41/Б</li>
+        <li><strong>ТРК Trinity</strong>3 этаж, г. Гродно, пр-т Янки Купалы, 87</li>
+      </ul>
+    </div>
+  </section>
+  </main>
+ 
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer__inner"> 
+    
+      <div class="footer__social">
+        <a href="#"><img src="image/facebook.svg" alt="Facebook"></a>
+        <a href="#"><img src="image/instagram.svg" alt="Instagram"></a>
+        <a href="#"><img src="image/twitter.svg" alt="Twitter"></a>
+        <a href="#"><img src="image/telegram.svg" alt="Telegram"></a>
+      </div>
+      <div class="footer__contacts">
+        <a href="tel:+375257853743">+375 (25) 785‑37‑43</a>
+        <a href="mailto:Vkorzan2006@gmail.com">Vkorzan2006@gmail.com</a>
+      </div>
+    </div>
+     <svg class="footer-svg" viewBox="0 0 1440 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M340 25L375 65H5V5L290 5A50 40 0 0 1 340 25Z" 
+              stroke="#1EB7E8" 
+              stroke-width="2"/>
+      </svg>
+  </footer>
+
+  <!-- Скрипт для бургер‑меню -->
+  <script>
+    const btnMenu = document.querySelector('.btn-menu');
+    const mobileNav = document.querySelector('.mobile-nav');
+
+    btnMenu.addEventListener('click', () => {
+      const expanded = btnMenu.getAttribute('aria-expanded') === 'true';
+      btnMenu.setAttribute('aria-expanded', String(!expanded));
+      mobileNav.classList.toggle('active');
+    });
+  </script>
+  
+</body>
+</html>

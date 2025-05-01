@@ -1,0 +1,53 @@
+:root { 
+  --bg: #0F0F0F;
+  --card-bg:#0F0F0F;
+  --accent: #DF2144; 
+  --text: #FFFFFF; 
+  --text-muted: #AAAAAA; 
+  --border-color: #0F0F0F; 
+  --max-width: 1000px;
+  --gap: 20px; 
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+
+  margin: 0;
+  padding: 20px;
+}
+
+.xml-content {
+  background: var(--bg); 
+  padding: 40px;
+  border-radius: 15px;
+  margin: 30px auto;
+  max-width: var(--max-width);
+
+}
+
+section {
+  margin-bottom: var(--gap); 
+  padding: 20px;
+  border-radius: 10px;
+  background-color: var(--bg);
+}
+
+h1 {
+  font-family: 'SF Display', Arial, sans-serif; 
+  font-weight: 700;
+  color: var(--text); 
+  font-size: 28px;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #AAAAAA; 
+  display: inline-block;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--text-muted); 
+  margin: 0 auto;
+  max-width: 800px;
+  text-align: justify; 
+}

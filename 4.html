@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Кинотеатр</title>
+  <link rel="stylesheet" href="style/style.css">
+  <link rel="stylesheet" href="style/styleXML.css">
+</head>
+<body>
+
+ <!-- Header -->
+ <header class="site-header">
+  <div class="container header__inner">
+    <a class="logo">
+      <img src="image/Logo.png" alt="Логотип">
+    </a>
+    <nav class="nav">
+      <ul class="nav__list">
+        <li><a href="1.html">Главная</a></li>
+        <li><a href="2.html">Каталог</a></li>
+        <li><a href="3.html">Оплата</a></li>
+        <li><a href="5.html">Мы на карте</a></li>
+      </ul>
+    </nav>
+    <button class="btn-menu" aria-label="Открыть меню" aria-expanded="false">
+      <img src="image/menu.svg" alt="Меню">
+    </button>
+  </div>
+  <nav class="mobile-nav">
+    <ul>
+      <li><a href="1.html">Главная</a></li>
+      <li><a href="2.html">Каталог</a></li>
+      <li><a href="3.html">Оплата</a></li>
+      <li><a href="5.html">Мы на карте</a></li>
+    </ul>
+  </nav>
+</header>
+
+  <div id="main-container">
+    <div class="xml-content">
+      <section class="about">
+        <h1>О нас</h1>
+        <p>Сеть кинотеатров "Cinema verse" была основана в 2025 году и на сегодняшний день включает 5 современных кинотеатров в крупнейших городах страны. Наша миссия — предоставлять зрителям высококачественный кинопросмотр в комфортной обстановке.</p>
+      </section>
+      <section class="achievements">
+        <h1>Достижения</h1>
+        <p>За меньше чем год наши кинотеатры посетили более 1 миллиона зрителей, и мы провели свыше 100 эксклюзивных премьерных показов.</p>
+      </section>
+      <section class="values">
+        <h1>Ценности и принципы</h1>
+        <p>Мы стремимся к постоянному улучшению сервиса, внедрению новейших технологий и созданию уютной атмосферы для каждого гостя.</p>
+      </section>
+    </div>
+  </div>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="container footer__inner">
+    <div class="footer__social">
+      <a href="#"><img src="image/facebook.svg" alt="Facebook"></a>
+      <a href="#"><img src="image/instagram.svg" alt="Instagram"></a>
+      <a href="#"><img src="image/twitter.svg" alt="Twitter"></a>
+      <a href="#"><img src="image/telegram.svg" alt="Telegram"></a>
+    </div>
+    <div id="contacts"></div>
+</footer>
+<script type="text/xml" id="xmlData">
+      <contacts>
+        <phone>+375 (25) 785-37-43</phone>
+        <email>Vkorzan2006@gmail.com</email>
+      </contacts>
+</script>
+    
+    <script>
+    const xmlString = document.getElementById('xmlData').textContent;
+    const parser = new DOMParser();
+    const xmlDoc = parser.parseFromString(xmlString, "text/xml");
+    document.getElementById('contacts').innerHTML = `
+      <div class="footer__contacts">
+        <a href="tel:${xmlDoc.querySelector('phone').textContent}">
+          ${xmlDoc.querySelector('phone').textContent}
+        </a>
+        <a href="mailto:${xmlDoc.querySelector('email').textContent}">
+          ${xmlDoc.querySelector('email').textContent}
+        </a>
+      </div>`;
+    const btnMenu = document.querySelector('.btn-menu');
+    const mobileNav = document.querySelector('.mobile-nav');
+    btnMenu.addEventListener('click', () => {
+      const expanded = btnMenu.getAttribute('aria-expanded') === 'true';
+      btnMenu.setAttribute('aria-expanded', String(!expanded));
+      mobileNav.classList.toggle('active');
+    });</script>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Кинотеатр</title>
+  <link rel="stylesheet" href="style/style.css">
+  <link rel="stylesheet" href="style/glavnaya.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header__inner">
+      <a class="logo">
+        <img src="image/Logo.png" alt="Логотип">
+      </a>
+
+      <!-- Десктоп‑навигация -->
+      <nav class="nav">
+        <ul class="nav__list">
+          <li><a href="2.html">Каталог</a></li>
+          <li><a href="3.html">Оплата</a></li>
+          <li><a href="5.html">Мы на карте</a></li>
+          <li><a href="4.html">О нас</a></li>
+        </ul>
+      </nav>
+
+      <!-- Кнопка‑бургер -->
+      <div class="header__controls">
+        <button class="btn-menu"
+                aria-label="Открыть меню"
+                aria-expanded="false">
+          <img src="image/menu.svg" alt="">
+        </button>
+      </div>
+    </div>
+
+    <!-- Мобильное меню (скрыто по умолчанию) -->
+    <nav class="mobile-nav">
+      <ul>
+        <li><a href="2.html">Каталог</a></li>
+        <li><a href="3.html">Оплата</a></li>
+        <li><a href="5.html">Мы на карте</a></li>
+        <li><a href="4.html">О нас</a></li>
+      </ul>
+    </nav>
+  </header>
+  <!-- Main -->
+  <main class="site-main container">
+    <section class="hero">
+      <div class="slider-wrapper">
+        <button class="slider-arrow slider-arrow--prev" aria-label="Назад">
+          <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 6L22 16L12 26" stroke="#DF2144" stroke-width="2"  fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="slider-viewport">
+          <div class="slider-track">
+            <div class="slider-slide">
+              <a href="4.html">
+                <img src="image/open.jpg" alt="Open">
+              </a>
+            </div>
+            <div class="slider-slide">
+              <a href="5.html">
+                <img src="image/hole.jpg" alt="hole">
+              </a>
+            </div>
+            <div class="slider-slide">
+              <a href="3.html">
+                <img src="image/1.jpg" alt="Canyon">
+              </a>
+            </div>
+          </div>
+        </div>
+        <button class="slider-arrow slider-arrow--next" aria-label="Вперед">
+          <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 6L22 16L12 26" stroke="#DF2144" stroke-width="2" 
+                  fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="slider-dots"></div>
+      </div>
+    </section>
+
+    <section class="movies-section">
+      <div class="section-header">
+        <h2 class="section-title">Новинки</h2>
+      </div>
+      <div class="movies-list">
+        <a href="3.html?film=Последний%20охотник%20на%20демонов">
+          <div class="movie-card">
+            <img src="image/Hunter.png" alt="Последний охотник на демонов">
+            <div class="movie-info">
+              <div class="rating-time">
+                <span>7.5</span>
+                <span>2 ч 45 мин</span>
+              </div>
+              <h3>Последний охотник на демонов</h3>
+            </div>
+          </div>
+        </a>
+        <a href="3.html?film=Пророк.%20История%20Александра%20Пушкина">
+          <div class="movie-card">
+            <img src="image/Pushkin.png" alt="Пророк. История Александра Пушкина">
+            <div class="movie-info">
+              <div class="rating-time">
+                <span>7.6</span>
+                <span>2 ч 25 мин</span>
+              </div>
+              <h3>Пророк. История Александра Пушкина</h3>
+            </div>
+          </div>
+        </a>
+        <a href="3.html?film=Крушение%20мира">
+          <div class="movie-card">
+            <img src="image/Сollapse.png" alt="Крушение мира">
+            <div class="movie-info">
+              <div class="rating-time">
+                <span>7.7</span>
+                <span>2ч</span>
+              </div>
+              <h3>Крушение мира</h3>
+            </div>
+          </div>
+        </a>
+        <a href="3.html?film=Астрал.%20Спуск%20к%20дьяволу">
+          <div class="movie-card">
+            <img src="image/Insidious.png" alt="Астрал. Спуск к дьяволу">
+            <div class="movie-info">
+              <div class="rating-time">
+                <span>8.5</span>
+                <span>1 ч 35 мин</span>
+              </div>
+              <h3>Астрал. Спуск к дьяволу</h3>
+            </div>
+          </div>
+        </a>
+      </div>
+      <a href="2.html" class="btn-primary">Перейти в каталог</a>
+    </section>
+
+    <section class="movies-section">
+      <div class="section-header">
+        <h2 class="section-title">Наиболее популярные</h2>
+      </div>
+      <div class="movies-list">
+        <a href="3.html?film=Пальма">
+          <div class="movie-card">
+            <img src="image/Palma2.png" alt="Пальма 2">
+            <div class="movie-info">
+              <div class="rating-time">
+                <span>7.9</span>
+                <span>2ч 15м</span>
+              </div>
+              <h3>Пальма 2</h3>
+            </div>
+          </div>
+        </a>
+        <a href="3.html?film=Мелочи%20жизни">
+          <div class="movie-card">
+            <img src="image/LifeThings.png" alt="Мелочи жизни">
+            <div class="movie-info">
+              <div class="rating-time">
+                <span>8.4</span>
+                <span>1 ч 50 мин</span>
+              </div>
+              <h3>Мелочи жизни</h3>
+            </div>
+          </div>
+        </a>
+        <a href="3.html?film=Ущелье">
+          <div class="movie-card">
+            <img src="image/Canyon.png" alt="Ущелье">
+            <div class="movie-info">
+              <div class="rating-time">
+                <span>8.2</span>
+                <span>2 ч 15 мин</span>
+              </div>
+              <h3>Ущелье</h3>
+            </div>
+          </div>
+        </a>
+        <a href="3.html?film=Ждун">
+          <div class="movie-card">
+            <img src="image/Zhduun.png" alt="Ждун">
+            <div class="movie-info">
+              <div class="rating-time">
+                <span>8.7</span>
+                <span>1 ч 45 мин</span>
+              </div>
+              <h3>Ждун</h3>
+            </div>
+          </div>
+        </a>
+      </div>
+      <a href="2.html" class="btn-primary">Перейти в каталог</a>
+    </section>
+
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer__inner">
+      <div class="footer__social">
+        <a href="#"><img src="image/facebook.svg" alt="Facebook"></a>
+        <a href="#"><img src="image/instagram.svg" alt="Instagram"></a>
+        <a href="#"><img src="image/twitter.svg" alt="Twitter"></a>
+        <a href="#"><img src="image/telegram.svg" alt="Telegram"></a>
+      </div>
+      <div class="footer__contacts">
+        <a href="tel:+375257853743">+375 (25) 785‑37‑43</a>
+        <a href="mailto:Vkorzan2006@gmail.com">Vkorzan2006@gmail.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Логика слайдера -->
+  <script src="script.js"></script>
+</body>
+</html>
