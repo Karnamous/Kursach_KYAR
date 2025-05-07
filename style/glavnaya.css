@@ -27,7 +27,7 @@
   width: 32px;
   height: 32px;
   border: none;
-  background: rgba(0,0,0,0.4) url('arrow.svg') no-repeat center/12px;
+  background: rgba(0,0,0,0.4)  no-repeat center/12px;
   border-radius: 50%;
   cursor: pointer;
   transition: background 0.2s;

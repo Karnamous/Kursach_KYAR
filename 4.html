@@ -6,6 +6,7 @@
   <title>Кинотеатр</title>
   <link rel="stylesheet" href="style/style.css">
   <link rel="stylesheet" href="style/styleXML.css">
+
 </head>
 <body>
 
@@ -65,14 +66,42 @@
     </div>
     <div id="contacts"></div>
 </footer>
-<script type="text/xml" id="xmlData">
-      <contacts>
-        <phone>+375 (25) 785-37-43</phone>
-        <email>Vkorzan2006@gmail.com</email>
-      </contacts>
-</script>
-    
+
     <script>
+document.addEventListener('DOMContentLoaded', function() {
+  loadContacts();
+});
+
+// Функция для загрузки контактов
+function loadContacts() {
+  Promise.all([
+    fetch('contacts.xml').then(response => response.text()),
+    fetch('contacts.xsl').then(response => response.text())
+  ])
+  .then(([xmlData, xslData]) => {
+    const parser = new DOMParser();
+    const xmlDoc = parser.parseFromString(xmlData, 'application/xml');
+    const xslDoc = parser.parseFromString(xslData, 'application/xml');
+
+    const processor = new XSLTProcessor();
+    processor.importStylesheet(xslDoc);
+    
+    const resultFragment = processor.transformToFragment(xmlDoc, document);
+
+    contactsContainer.innerHTML = '';
+    contactsContainer.appendChild(resultFragment);
+  })
+  .catch(error => {
+    console.error('Error loading contacts:', error);
+    const fallbackHTML = `
+      <div class="footer__contacts">
+        <a href="tel:+375 (25) 785-37-43">+375 (25) 785-37-43</a>
+        <a href="mailto:Vkorzan2006@gmail.com">Vkorzan2006@gmail.com</a>
+      </div>
+    `;
+    document.getElementById('contacts').innerHTML = fallbackHTML;
+  });
+}
     const xmlString = document.getElementById('xmlData').textContent;
     const parser = new DOMParser();
     const xmlDoc = parser.parseFromString(xmlString, "text/xml");
@@ -85,14 +114,8 @@
           ${xmlDoc.querySelector('email').textContent}
         </a>
       </div>`;
-    const btnMenu = document.querySelector('.btn-menu');
-    const mobileNav = document.querySelector('.mobile-nav');
-    btnMenu.addEventListener('click', () => {
-      const expanded = btnMenu.getAttribute('aria-expanded') === 'true';
-      btnMenu.setAttribute('aria-expanded', String(!expanded));
-      mobileNav.classList.toggle('active');
-    });</script>
-    
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</script>
+<script src="script.js"></script>
 </body>
 </html>
