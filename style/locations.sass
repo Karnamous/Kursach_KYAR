@@ -1,13 +1,25 @@
 
+=position-relative
+  position: relative
+
+=mobile
+  @media (max-width: 768px)
+    @content
+
+$spacing-lg: 2rem
+$spacing-md: 1.5rem
+$spacing-sm: 1rem
+$color-accent: var(--accent)
+
 .locations-section
-  padding: 2rem 0
+  padding: $spacing-lg 0
   text-align: left
 
   h2
     font-size: 2rem
-    margin-bottom: 1.5rem
+    margin-bottom: $spacing-md
     position: relative
-    padding-left: 1.5rem
+    padding-left: $spacing-md
 
     &::before
       content: ''
@@ -17,8 +29,8 @@
       transform: translateY(-50%)
       width: 8px
       height: 8px
-
       border-radius: 50%
+      background-color: $color-accent
 
   .city-block
     margin-bottom: 3rem
@@ -30,38 +42,40 @@
       font-family: 'Semi Bold', sans-serif
       font-size: 1.5rem
       color: var(--text)
-      margin-bottom: 1rem
-      padding-left: 1rem
-      border-left: 3px solid var(--accent)
+      margin-bottom: $spacing-sm
+      padding-left: $spacing-sm
+      border-left: 3px solid $color-accent
 
     ul
       list-style: none
-      padding-left: 2rem
+      padding-left: $spacing-lg
 
       li
         position: relative
-        margin-bottom: 1rem
+        margin-bottom: $spacing-sm
         font-size: 1.1rem
         line-height: 1.6
         color: var(--text-alt)
 
         &::before
+          content: '•'
           position: absolute
-          left: -1.5rem
+          left: -$spacing-md
           top: 0
+          color: $color-accent
 
         strong
           color: var(--text)
           display: block
           margin-bottom: 0.3rem
 
-  @media (max-width: 768px)
-    padding: 1rem 0
+  +mobile
+    padding: $spacing-md 0
 
     h2
       font-size: 1.5rem
-      padding-left: 1rem
-      
+      padding-left: $spacing-sm
+
       &::before
         width: 6px
         height: 6px
@@ -69,36 +83,29 @@
     .city-block
       h3
         font-size: 1.2rem
-      
-      ul li
-        font-size: 1rem
 
-.site-footer 
-  position: relative
+      ul
+        li
+          font-size: 1rem
 
-.footer-svg 
-  position: absolute
-  right: 70%
-  bottom: 0%
-  width: 100%
-  max-width: 2000px
-  height: auto
-  z-index: 2
+.site-footer
+  +position-relative
 
-
-
-@media (max-width: 768px) 
-  .footer-svg 
-    width: 100%
+  .footer-svg
+    position: absolute
     right: 70%
-    bottom: 0%
-    height: 27%
-  
+    bottom: 0
+    width: 100%
+    max-width: 2000px
+    height: auto
+    z-index: 2
 
+  +mobile
+    .footer-svg
+      width: 100%
+      right: 70%
+      bottom: 0
+      height: 27%
 
-.site-footer 
-  position: relative
-
-.footer__inner 
-  position: relative 
-
+  .footer__inner
+    +position-relative

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .locations-section {
   padding: 2rem 0;
   text-align: left;
@@ -17,6 +18,7 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
+  background-color: var(--accent);
 }
 .locations-section .city-block {
   margin-bottom: 3rem;
@@ -44,9 +46,11 @@
   color: var(--text-alt);
 }
 .locations-section .city-block ul li::before {
+  content: "•";
   position: absolute;
   left: -1.5rem;
   top: 0;
+  color: var(--accent);
 }
 .locations-section .city-block ul li strong {
   color: var(--text);
@@ -55,7 +59,7 @@
 }
 @media (max-width: 768px) {
   .locations-section {
-    padding: 1rem 0;
+    padding: 1.5rem 0;
   }
   .locations-section h2 {
     font-size: 1.5rem;
@@ -76,29 +80,23 @@
 .site-footer {
   position: relative;
 }
-
-.footer-svg {
+.site-footer .footer-svg {
   position: absolute;
   right: 70%;
-  bottom: 0%;
+  bottom: 0;
   width: 100%;
   max-width: 2000px;
   height: auto;
   z-index: 2;
 }
-
 @media (max-width: 768px) {
-  .footer-svg {
+  .site-footer .footer-svg {
     width: 100%;
     right: 70%;
-    bottom: 0%;
+    bottom: 0;
     height: 27%;
   }
 }
-.site-footer {
-  position: relative;
-}
-
-.footer__inner {
+.site-footer .footer__inner {
   position: relative;
 }/*# sourceMappingURL=locations.css.map */
